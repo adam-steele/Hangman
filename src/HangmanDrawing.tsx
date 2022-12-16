@@ -79,16 +79,29 @@ const LEFT_LEG = (
     }}></div>
 )
 
+//Array needs to  be in order to work properly 
+const BODY_PARTS = [
+    HEAD,
+    BODY,
+    RIGHT_ARM,
+    LEFT_ARM,
+    RIGHT_LEG,
+    LEFT_LEG,
+]
 
-export function HangmanDrawing() {
+
+type HangmanDrawingProps = {
+    numberOfGuesses:number
+}
+
+
+
+
+export function HangmanDrawing({numberOfGuesses}:HangmanDrawingProps) {
     //posiiton relative to allow position of indivdual elements drawing in div
 return<div style={{position:"relative"}}>
-{HEAD}
-{BODY}
-{RIGHT_ARM}
-{LEFT_ARM}
-{RIGHT_LEG}
-{LEFT_LEG}
+{/* show the number of body parts from 0 up to the number of guesses */}
+{BODY_PARTS.slice(0,numberOfGuesses)}
 {/* little head support */}
 <div style={{
     height:"50px",
