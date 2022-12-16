@@ -40,7 +40,6 @@ function App() {
       //if key is not a-z return 
       if(!key.match(/^[a-z]$/)) return
       e.preventDefault()
-      setGuessedLetters([])
       addGuessedLetter(key)
     }
     //hooking up event listener 
@@ -87,7 +86,7 @@ function App() {
       textAlign: "center",
     }} >
         {isWinner && "You Win press enter to Try again"}
-        {isLoser && "Good Effort Refresh to Try again"}
+        {isLoser && "Good Effort press enter Refresh to Try again"}
       </div>
       {/*only thing to pass down is number of guesses to tell drawing what to show */}
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
